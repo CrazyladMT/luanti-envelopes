@@ -1,5 +1,5 @@
-# minetest-envelopes
-Envelope mod for Minetest. https://minetest.net/
+# luanti-envelopes
+Envelope mod for Luanti. https://luanti.org/
 
 # How to use
 Blank envelopes are crafted with 6 paper. Punch with a blank envelope to open the letter-wrting formspec, which
