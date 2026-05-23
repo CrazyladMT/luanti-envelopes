@@ -91,7 +91,7 @@ core.register_craftitem("envelopes:envelope_opened", {
     stack_max = 1,
     groups = {not_in_creative_inventory = 1},
     on_use = function(stack, user, pointed_thing)
-		local meta = stack:get_meta()
+        local meta = stack:get_meta()
         local sender = esc(meta:get_string("sender"))
         local receiver = esc(meta:get_string("receiver"))
         local text = esc(meta:get_string("text"))
@@ -99,7 +99,7 @@ core.register_craftitem("envelopes:envelope_opened", {
 
         local formatted_attn = attn ~= "" and ("\n<style color=yellow>Attn:</style>    " .. attn .. "</b>") or ""
 
-		local W = 9
+        local W = 9
         local H = 8
 
         local pad = 0.375
@@ -107,10 +107,10 @@ core.register_craftitem("envelopes:envelope_opened", {
         local exit_btn_size = 0.62
 
         local fs = {
-			"formspec_version[7]",
-			f("size[%d,%d]", W, H),
+            "formspec_version[7]",
+            f("size[%d,%d]", W, H),
 
-			-- envelope icon
+            -- envelope icon
 			f("image[%g,%g;%g,%g;%s]", pad, pad, image_size, image_size,
 					esc("envelopes_envelope_opened.png")),
 
