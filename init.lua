@@ -54,7 +54,7 @@ end
 core.register_craftitem("envelopes:envelope_blank", {
     description = "Blank Envelope",
     inventory_image = "envelopes_envelope_blank.png",
-    on_use = function(stack, user, pointed_thing)
+    on_use = function(stack, user, _)
         core.show_formspec(user:get_player_name(), "envelopes:input",
             "size[5.5,5.5]" ..
             "field[2,0.5;3.5,1;addressee;Addressee;]" ..
@@ -71,7 +71,7 @@ core.register_craftitem("envelopes:envelope_sealed", {
     inventory_image = "envelopes_envelope_sealed.png",
     stack_max = 1,
     groups = {not_in_creative_inventory = 1},
-    on_use = function(stack, user, pointed_thing)
+    on_use = function(stack, user, _)
         local meta = stack:get_meta()
         local receiver = normalize_name(meta:get_string("receiver"))
         local user_name = user:get_player_name()
@@ -90,7 +90,7 @@ core.register_craftitem("envelopes:envelope_opened", {
     inventory_image = "envelopes_envelope_opened.png",
     stack_max = 1,
     groups = {not_in_creative_inventory = 1},
-    on_use = function(stack, user, pointed_thing)
+    on_use = function(stack, user, _)
         local meta = stack:get_meta()
         local sender = esc(meta:get_string("sender"))
         local receiver = esc(meta:get_string("receiver"))
