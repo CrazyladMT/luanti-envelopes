@@ -124,7 +124,7 @@ core.register_craftitem("envelopes:envelope_opened", {
 
 			-- exit button (top-right)
 			f("image_button_exit[%g,%g;%g,%g;%s;envelopes_display_exit;]", W - pad - exit_btn_size,
-					pad, exit_btn_size, exit_btn_size, esc("envelopes_clear.png")),
+					pad, exit_btn_size, exit_btn_size, esc("clear.png")),
 
 			f("textarea[%g,%g;%g,%g;;;%s]",
 					pad, pad * 3 + image_size, W - (pad * 2),
