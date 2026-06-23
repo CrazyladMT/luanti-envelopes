@@ -58,9 +58,11 @@ core.register_craftitem("envelopes:envelope_blank", {
         core.show_formspec(user:get_player_name(), "envelopes:input",
             "size[5.5,5.5]" ..
             "field[2,0.5;3.5,1;addressee;Addressee;]" ..
+			"field_close_on_enter[addressee;false]" ..
             "label[0,0;Write a letter]" ..
             "textarea[0.5,1.5;5,3;text;Text;]" ..
             "field[3,4.8;2.5,1;attn;Attn. (Optional);]" ..
+			"field_close_on_enter[attn;false]" ..
             "button_exit[0.25,4.5;2,1;exit;Seal]")
         return stack
     end
@@ -163,6 +165,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
     if inv:room_for_item("main", letter) and inv:contains_item("main", blank) then
         inv:add_item("main", letter)
         inv:remove_item("main", blank)
+		core.close_formspec(sender_name, formname)
     else
         core.chat_send_player(sender_name, "Unable to create letter! Check your inventory space.")
     end
