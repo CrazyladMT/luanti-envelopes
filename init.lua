@@ -95,7 +95,7 @@ core.register_craftitem("envelopes:envelope_opened", {
         local sender = esc(meta:get_string("sender"))
         local receiver = esc(meta:get_string("receiver"))
         local text = esc(meta:get_string("text"))
-        local attn = esc(meta:get_string("attn"))
+        local attn = esc(core.hypertext_escape(meta:get_string("attn")))
 
         local formatted_attn = attn ~= "" and ("\n<style color=yellow>Attn:</style>    " .. attn .. "</b>") or ""
 
